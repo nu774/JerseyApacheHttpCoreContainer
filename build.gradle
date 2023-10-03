@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '8.+'
+}
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'acme.Main'
+}
+
+dependencies {
+    implementation 'org.apache.httpcomponents.core5:httpcore5:5.2.+'
+    implementation 'org.glassfish.jaxb:jaxb-runtime:4.0.+'
+    implementation 'org.glassfish.jersey.core:jersey-server:3.1.+'
+    implementation 'org.glassfish.jersey.inject:jersey-hk2:3.1.+'
+    implementation 'org.glassfish.jersey.media:jersey-media-json-gson:3.1+'
+    implementation 'org.glassfish.jersey.media:jersey-media-sse:3.1+'
+    implementation 'jakarta.activation:jakarta.activation-api:2.1.+'
+    implementation 'org.slf4j:jul-to-slf4j:2.0.+'
+    implementation 'ch.qos.logback:logback-classic:1.4.+'
+    implementation 'commons-fileupload:commons-fileupload:1.+'
+}
