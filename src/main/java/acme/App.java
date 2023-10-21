@@ -1,19 +1,8 @@
 package acme;
 
 import acme.http.HttpServer;
-import acme.resource.AsyncResource;
-import acme.resource.CharacterGeneratorResource;
-import acme.resource.DayTimeResource;
-import acme.resource.DiscardResource;
-import acme.resource.EchoResource;
-import acme.resource.EnvironmentResource;
-import acme.resource.FileUploadResource;
-import acme.resource.PipeResource;
-import acme.resource.SleepResource;
-import acme.resource.SseResource;
 import org.apache.hc.core5.http.ExceptionListener;
 import org.apache.hc.core5.http.HttpConnection;
-import org.apache.hc.core5.http.HttpHeaders;
 import org.apache.hc.core5.http.HttpRequest;
 import org.apache.hc.core5.http.HttpResponse;
 import org.apache.hc.core5.http.impl.Http1StreamListener;

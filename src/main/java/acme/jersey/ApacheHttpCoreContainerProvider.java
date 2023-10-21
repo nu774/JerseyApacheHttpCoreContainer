@@ -3,7 +3,6 @@ package acme.jersey;
 import jakarta.ws.rs.ProcessingException;
 import jakarta.ws.rs.core.Application;
 import org.apache.hc.core5.http.io.HttpRequestHandler;
-import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.spi.ContainerProvider;
 
 public class ApacheHttpCoreContainerProvider implements ContainerProvider {
