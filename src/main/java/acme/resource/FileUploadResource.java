@@ -10,11 +10,14 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.Response;
+
 import org.apache.commons.fileupload.FileUpload;
 import org.apache.commons.fileupload.FileUploadBase;
+import org.apache.commons.fileupload.FileUploadException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
@@ -49,7 +52,7 @@ public class FileUploadResource {
             return Response.ok().build();
         } catch (FileUploadBase.InvalidContentTypeException e) {
             throw new NotSupportedException();
-        } catch (Exception e) {
+        } catch (FileUploadException|IOException e) {
             throw new InternalServerErrorException();
         }
     }

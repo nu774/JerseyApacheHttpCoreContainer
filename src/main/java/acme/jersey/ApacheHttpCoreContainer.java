@@ -148,7 +148,7 @@ public class ApacheHttpCoreContainer implements Container, HttpRequestHandler {
                     }
                 }
                 return sink;
-            } catch (Exception e) {
+            } catch (InterruptedException e) {
                 throw new ContainerException(e);
             }
         }
@@ -263,10 +263,8 @@ public class ApacheHttpCoreContainer implements Container, HttpRequestHandler {
             }
             final var entity = request.getEntity();
             if (entity != null) {
-                try {
-                    final var stream = entity.getContent();
-                    requestContext.setEntityStream(stream);
-                } catch (IOException ioe) {}
+                final var stream = entity.getContent();
+                requestContext.setEntityStream(stream);
             }
             final var writer = new ResponseWriter(executor, scheduler, response);
             requestContext.setWriter(writer);
@@ -278,7 +276,7 @@ public class ApacheHttpCoreContainer implements Container, HttpRequestHandler {
                 }
             });
             writer.waitForReady();
-        } catch (Exception e) {
+        } catch (URISyntaxException|IOException e) {
             throw new HttpException(e.getMessage());
         }
     }
