@@ -10,7 +10,7 @@ import java.io.InputStream;
 public class JerseyRequestContext implements RequestContext {
     private final HttpHeaders headers;
     private final InputStream inputStream;
-    private MediaType mediaType;
+    private final MediaType mediaType;
     private String charset;
 
     public JerseyRequestContext(HttpHeaders headers, InputStream inputStream) {

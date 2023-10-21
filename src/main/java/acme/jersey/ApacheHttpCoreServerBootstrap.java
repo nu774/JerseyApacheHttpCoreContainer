@@ -7,7 +7,7 @@ import jakarta.ws.rs.core.Application;
 import java.util.function.Consumer;
 
 public class ApacheHttpCoreServerBootstrap {
-    private ServerBootstrap bootstrap = ServerBootstrap.bootstrap();
+    private final ServerBootstrap bootstrap = ServerBootstrap.bootstrap();
     final ApacheHttpCoreContainerProvider provider = new ApacheHttpCoreContainerProvider();
     final ApacheHttpCoreContainer container;
 
